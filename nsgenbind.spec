@@ -1,13 +1,12 @@
 #
 Summary:	Tool to generate dom bindings
 Name:		nsgenbind
-Version:	0.0.1
+Version:	0.1.0
 Release:	1
 License:	MIT
 Group:		Development/Tools
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	1b40fc743358b1331f1fe723a3e931bc
-Patch0:		bison.patch
+# Source0-md5:	23ebe622872b4a587f86c5885146d81e
 URL:		http://www.netsurf-browser.org/
 BuildRequires:	bison
 BuildRequires:	flex
@@ -20,7 +19,6 @@ files and a binding configuration file.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags}"
