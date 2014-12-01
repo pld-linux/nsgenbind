@@ -1,16 +1,16 @@
 Summary:	Tool to generate DOM bindings
 Summary(pl.UTF-8):	Narzędzie do generowania wiązań DOM
 Name:		nsgenbind
-Version:	0.1.0
+Version:	0.1.1
 Release:	1
 License:	MIT
 Group:		Development/Tools
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	23ebe622872b4a587f86c5885146d81e
+# Source0-md5:	18a4163c670be326775f7f05c60dc7bc
 URL:		http://www.netsurf-browser.org/
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	netsurf-buildsystem
+BuildRequires:	netsurf-buildsystem >= 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
