@@ -1,16 +1,16 @@
 Summary:	Tool to generate DOM bindings
 Summary(pl.UTF-8):	Narzędzie do generowania wiązań DOM
 Name:		nsgenbind
-Version:	0.1.2
+Version:	0.3
 Release:	1
 License:	MIT
 Group:		Development/Tools
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	e208ea54c5e364ab5b77e2c4e4c7dd06
+# Source0-md5:	806addb661b109c7f58642f9216549d9
 URL:		http://www.netsurf-browser.org/
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	netsurf-buildsystem >= 1.3
+BuildRequires:	netsurf-buildsystem >= 1.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,16 +25,21 @@ z plików W3C webidl oraz pliku konfiguracyjnego wiązań.
 %setup -q
 
 %build
-CFLAGS="%{rpmcflags}"
-LDFLAGS="%{rpmldflags}"
-export CFLAGS
-export LDFLAGS
+export AR="%{__ar}"
+export CC="%{__cc}"
+export CFLAGS="%{rpmcflags}"
+export LDFLAGS="%{rpmldflags}"
 
 %{__make} \
 	PREFIX=%{_prefix} \
 	Q=
 
 %install
+export AR="%{__ar}"
+export CC="%{__cc}"
+export CFLAGS="%{rpmcflags}"
+export LDFLAGS="%{rpmldflags}"
+
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
